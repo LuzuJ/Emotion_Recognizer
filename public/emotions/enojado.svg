@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Cara enojada -->
+  <circle cx="50" cy="50" r="45" fill="#FF6B6B" stroke="#E84545" stroke-width="2"/>
+  <!-- Cejas enojadas -->
+  <line x1="25" y1="35" x2="40" y2="38" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round"/>
+  <line x1="60" y1="38" x2="75" y2="35" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round"/>
+  <!-- Ojos -->
+  <circle cx="35" cy="43" r="4" fill="#4A4A4A"/>
+  <circle cx="65" cy="43" r="4" fill="#4A4A4A"/>
+  <!-- Boca enojada -->
+  <path d="M 30 65 Q 50 50 70 65" fill="none" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round"/>
+</svg>

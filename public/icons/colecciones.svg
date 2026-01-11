@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120">
+  <!-- Trofeo - base -->
+  <rect x="35" y="90" width="30" height="10" rx="2" fill="#5B9BD5"/>
+  <rect x="30" y="100" width="40" height="8" rx="3" fill="#3A7BB8"/>
+  
+  <!-- Trofeo - copa -->
+  <path d="M 25 20 L 25 50 Q 25 70 50 75 Q 75 70 75 50 L 75 20 Z" fill="#5B9BD5"/>
+  
+  <!-- Estrella en el trofeo -->
+  <path d="M 50 30 L 54 42 L 67 42 L 57 50 L 61 62 L 50 54 L 39 62 L 43 50 L 33 42 L 46 42 Z" fill="white"/>
+  
+  <!-- Asas del trofeo -->
+  <path d="M 25 25 Q 10 25 10 40 Q 10 55 25 55" fill="none" stroke="#5B9BD5" stroke-width="6" stroke-linecap="round"/>
+  <path d="M 75 25 Q 90 25 90 40 Q 90 55 75 55" fill="none" stroke="#5B9BD5" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Soporte -->
+  <rect x="45" y="75" width="10" height="15" fill="#3A7BB8"/>
+</svg>

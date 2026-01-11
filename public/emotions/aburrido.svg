@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Cara aburrida -->
+  <circle cx="50" cy="50" r="45" fill="#C5CAE9" stroke="#9FA8DA" stroke-width="2"/>
+  <!-- Ojos semi cerrados -->
+  <ellipse cx="35" cy="42" rx="5" ry="3" fill="#4A4A4A"/>
+  <ellipse cx="65" cy="42" rx="5" ry="3" fill="#4A4A4A"/>
+  <!-- Boca recta aburrida -->
+  <line x1="35" y1="63" x2="65" y2="63" stroke="#4A4A4A" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

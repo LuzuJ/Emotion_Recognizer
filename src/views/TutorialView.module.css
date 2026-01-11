@@ -1,0 +1,367 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+}
+
+.backButton {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #4A8B9F;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.backButton:hover {
+  transform: scale(1.1);
+}
+
+.titleContainer {
+  background-color: #Dbe9f4;
+  /* Light blue background for title */
+  padding: 0.5rem 3rem;
+  border-radius: 15px;
+}
+
+.title {
+  font-size: 2rem;
+  color: black;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gameLogo {
+  width: 50px;
+  height: auto;
+}
+
+.logoText {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #00AEEF;
+  /* Cyan blue */
+  margin-top: 0.25rem;
+}
+
+/* Content Card */
+.contentCard {
+  background: white;
+  border-radius: 4px;
+  /* Square-ish as per reference */
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stepDescription {
+  font-size: 1.25rem;
+  color: black;
+  text-align: center;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.illustration {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.stepIndicator {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.stepDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.stepDot.active {
+  background: var(--primary-color);
+  transform: scale(1.2);
+}
+
+/* Footer / Navigation */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.skipButton {
+  background: #C4E4D8;
+  /* Pastel Green */
+  color: black;
+  padding: 0.75rem 2.5rem;
+  border-radius: 12px;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.skipButton:hover {
+  transform: scale(1.05);
+  background: #B0D6CA;
+}
+
+.navGroup {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navButton {
+  padding: 0.75rem 2rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navButton.prev {
+  background: #E2E8F0;
+  /* Grayish */
+  color: black;
+}
+
+.navButton.prev:hover {
+  background: #CBD5E1;
+}
+
+.navButton.next {
+  background: #9FBAD1;
+  /* Blue reference */
+  color: black;
+}
+
+.navButton.next:hover {
+  background: #8FAAC1;
+  transform: scale(1.05);
+}
+
+.navButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Shared Illustrations Styles */
+.cardsDemo,
+.emotionDisplay {
+  /* Reusing logic but simpler structure */
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.demoCard {
+  width: 100px;
+  height: 140px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.demoCard.faceDown {
+  background: #Dbe9f4;
+  border: 1px solid #BDC3C7;
+}
+
+.demoCard.faceUp {
+  background: white;
+  border: 2px solid #5B9BD5;
+}
+
+.demoCard.matched {
+  background: #E8F5E9;
+  border: 3px solid var(--success-color);
+}
+
+.cardBack {
+  font-size: 2rem;
+  color: #5B9BD5;
+  font-weight: bold;
+}
+
+.cardFront {
+  font-size: 3rem;
+}
+
+.emotionImage {
+  width: 150px;
+  height: 150px;
+  background: white;
+  border: 4px solid #5B9BD5;
+  padding: 10px;
+}
+
+.handPointer {
+  font-size: 3rem;
+  position: absolute;
+  /* If needed for positioning relative to card */
+  animation: float 2s infinite ease-in-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .navGroup {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .skipButton {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+.demoCard.wrong {
+  background: #FFEBEE;
+  border: 3px solid var(--error-color);
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.optionButton {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+  border: 2px solid #C4D9E8;
+  color: #2C3E50;
+  font-family: inherit;
+}
+
+.optionButton:hover {
+  border-color: #5B9BD5;
+  background: #EAF4F9;
+}
+
+.optionButton.selected {
+  border-color: #5B9BD5;
+  background: #5B9BD5;
+  color: white;
+}
+
+.optionButton.correct {
+  border-color: var(--success-color);
+  background: var(--success-color);
+  color: white;
+}
+
+.optionButton:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

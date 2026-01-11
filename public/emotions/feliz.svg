@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Cara feliz -->
+  <circle cx="50" cy="50" r="45" fill="#FFD93D" stroke="#F6C324" stroke-width="2"/>
+  <!-- Ojos -->
+  <circle cx="35" cy="40" r="5" fill="#4A4A4A"/>
+  <circle cx="65" cy="40" r="5" fill="#4A4A4A"/>
+  <!-- Sonrisa -->
+  <path d="M 30 55 Q 50 70 70 55" fill="none" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round"/>
+</svg>

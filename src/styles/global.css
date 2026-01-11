@@ -1,0 +1,200 @@
+/* Variables de tema - Modo Claro y Oscuro */
+:root[data-theme="light"] {
+  /* Colores primarios - Paleta Azul Suave */
+  --color-primary: #5B9BD5;
+  --color-primary-light: #A5C9E8;
+  --color-primary-dark: #2E75B6;
+  
+  /* Colores de fondo - Azul muy suave */
+  --color-background: #E7F3FF;
+  --color-surface: #FFFFFF;
+  --color-card: #F8FCFF;
+  
+  /* Colores de texto */
+  --color-text-primary: #2C3E50;
+  --color-text-secondary: #5D6D7E;
+  --color-text-light: #95A5A6;
+  
+  /* Colores de acento */
+  --color-success: #52C41A;
+  --color-warning: #FAAD14;
+  --color-error: #F5222D;
+  --color-info: #5B9BD5;
+  
+  /* Colores de botones */
+  --color-button-primary: #5B9BD5;
+  --color-button-primary-hover: #7BAEE0;
+  --color-button-secondary: #E8F4FD;
+  --color-button-secondary-hover: #D0E8FA;
+  
+  /* Sombras */
+  --shadow-small: 0 2px 8px rgba(91, 155, 213, 0.1);
+  --shadow-medium: 0 4px 16px rgba(91, 155, 213, 0.15);
+  --shadow-large: 0 8px 24px rgba(91, 155, 213, 0.2);
+  
+  /* Bordes */
+  --border-color: #D4E6F5;
+  --border-radius-small: 8px;
+  --border-radius-medium: 12px;
+  --border-radius-large: 20px;
+  --border-radius-xl: 30px;
+}
+
+:root[data-theme="dark"] {
+  /* Colores primarios */
+  --color-primary: #5BA3F5;
+  --color-primary-light: #7AB8F7;
+  --color-primary-dark: #3D7BC7;
+  
+  /* Colores de fondo */
+  --color-background: #1A1D29;
+  --color-surface: #252936;
+  --color-card: #2D3142;
+  
+  /* Colores de texto */
+  --color-text-primary: #E8EAF0;
+  --color-text-secondary: #B4B8C5;
+  --color-text-light: #7B7F8E;
+  
+  /* Colores de acento */
+  --color-success: #73D13D;
+  --color-warning: #FFC53D;
+  --color-error: #FF4D4F;
+  --color-info: #40A9FF;
+  
+  /* Colores de botones */
+  --color-button-primary: #5BA3F5;
+  --color-button-primary-hover: #7AB8F7;
+  --color-button-secondary: #3A3F52;
+  --color-button-secondary-hover: #484E64;
+  
+  /* Sombras */
+  --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-large: 0 8px 24px rgba(0, 0, 0, 0.5);
+  
+  /* Bordes */
+  --border-color: #3A3F52;
+  --border-radius-small: 8px;
+  --border-radius-medium: 12px;
+  --border-radius-large: 16px;
+  --border-radius-xl: 24px;
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Accesibilidad - Navegación por teclado */
+*:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--border-radius-small);
+}
+
+/* Desactivar animaciones si el usuario lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Contenedor principal */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Utilidades de accesibilidad */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Animaciones suaves */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Clases de animación */
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+/* Responsive - Soporte para zoom */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* Soporte para zoom alto (400%-500%) */
+@media (min-resolution: 192dpi) {
+  html {
+    font-size: 18px;
+  }
+}

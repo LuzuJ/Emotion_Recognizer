@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Cara orgullosa -->
+  <circle cx="50" cy="50" r="45" fill="#9B59B6" stroke="#8E44AD" stroke-width="2"/>
+  <!-- Ojos cerrados satisfechos -->
+  <path d="M 28 40 Q 35 37 42 40" fill="none" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 58 40 Q 65 37 72 40" fill="none" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round"/>
+  <!-- Sonrisa orgullosa -->
+  <path d="M 32 58 Q 50 68 68 58" fill="none" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round"/>
+  <!-- Nariz levantada (orgullosa) -->
+  <circle cx="50" cy="50" r="3" fill="#4A4A4A"/>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Cara confundida -->
+  <circle cx="50" cy="50" r="45" fill="#F4A460" stroke="#D2691E" stroke-width="2"/>
+  <!-- Ceja confundida -->
+  <path d="M 25 32 Q 30 35 35 32" fill="none" stroke="#4A4A4A" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 65 32 Q 70 29 75 32" fill="none" stroke="#4A4A4A" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Ojos mirando a un lado -->
+  <circle cx="30" cy="40" r="5" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="2"/>
+  <circle cx="28" cy="40" r="2.5" fill="#4A4A4A"/>
+  <circle cx="60" cy="40" r="5" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="2"/>
+  <circle cx="58" cy="40" r="2.5" fill="#4A4A4A"/>
+  <!-- Boca confundida -->
+  <path d="M 35 60 L 45 63 L 55 60 L 65 63" fill="none" stroke="#4A4A4A" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

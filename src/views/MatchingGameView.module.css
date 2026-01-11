@@ -1,0 +1,331 @@
+.container {
+  min-height: 100vh;
+  background-color: #EAF4F9;
+  /* Light Blue */
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.exitButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #4A8B9F;
+  /* Teal */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.exitButton:hover {
+  transform: scale(1.1);
+  background-color: #3B7E9F;
+}
+
+.exitButton svg {
+  width: 24px;
+  height: 24px;
+}
+
+.gameInfo {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.infoBadge {
+  background-color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  min-width: 100px;
+}
+
+.infoLabel {
+  font-size: 0.8rem;
+  color: #7F8C8D;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.infoValue {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #4A8B9F;
+}
+
+.gameBoard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.cardsGrid {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 900px;
+  width: 100%;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+/* Grids según dificultad */
+.cardsGrid[data-difficulty="facil"] {
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 800px;
+}
+
+.cardsGrid[data-difficulty="medio"] {
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 1000px;
+}
+
+.cardsGrid[data-difficulty="dificil"] {
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 1200px;
+}
+
+.card {
+  aspect-ratio: 3/4;
+  position: relative;
+  cursor: pointer;
+  min-width: 100px;
+}
+
+.cardInner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.card.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.card.matched .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Card Back Design */
+.cardBack {
+  background-color: #A5D6E0;
+  /* Pastel Blue */
+  border: 4px solid white;
+  /* Optional: white border for bevel effect */
+  box-shadow: inset 0 0 0 1px #8FBCC6;
+}
+
+.cardBackText {
+  font-size: 3rem;
+  color: #333;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.cardBackLabel {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Card Front Design */
+.cardFront {
+  background: white;
+  transform: rotateY(180deg);
+  border: 2px solid #A5D6E0;
+}
+
+.emotionImage {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.cardFrontLabel {
+  font-size: 1.1rem;
+  color: #2C3E50;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+/* Matched State */
+.card.matched .cardFront {
+  border-color: #8BC34A;
+  /* Green border for match */
+  background-color: #E8F5E9;
+  box-shadow: 0 0 15px rgba(139, 195, 74, 0.4);
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+}
+
+.modal {
+  background: rgba(255, 255, 255, 0.35);
+  /* Transparent/Glass */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 24px;
+  padding: 2.5rem;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.modalTitle {
+  font-size: 1.75rem;
+  color: #2C3E50;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.modalText {
+  font-size: 1.1rem;
+  color: #34495E;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.modalButton {
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+  border: none;
+  min-width: 140px;
+  font-family: 'Varela Round', sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modalButton:hover {
+  transform: translateY(-2px);
+}
+
+.cancel {
+  background-color: #C4E4D8;
+  /* Pastel Green */
+  color: #2C5F2D;
+}
+
+.confirm {
+  background-color: #6497AA;
+  /* Teal Blue */
+  color: white;
+}
+
+/* Feedback Message */
+.feedbackMessage {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #6497AA;
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 30px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 50;
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cardsGrid {
+    gap: 0.75rem;
+  }
+
+  .cardBackText {
+    font-size: 2rem;
+  }
+
+  .cardBackLabel {
+    font-size: 0.7rem;
+  }
+
+  .infoValue {
+    font-size: 1.2rem;
+  }
+
+  .exitButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .infoBadge {
+    padding: 0.5rem 1rem;
+    min-width: 80px;
+  }
+}

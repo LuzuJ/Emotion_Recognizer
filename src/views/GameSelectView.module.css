@@ -1,0 +1,241 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+  /* Updated background */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: var(--font-family);
+  overflow-x: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  width: 100%;
+}
+
+.backButton {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  /* Teal from Main Menu Exit - used primary here for consistency or check if teal var exists */
+  /* Actually MainMenu used #4A8B9F which is not exactly primary #5B9BD5. 
+     Let's use --primary-hover or similar if teal isn't defined, or define a new var?
+     The plan said "Standardize". Let's use --primary-color. */
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: white;
+  /* For the icon fill */
+}
+
+.backButton:hover {
+  transform: scale(1.1);
+  background-color: var(--primary-hover);
+}
+
+.backIcon {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  /* Make icon white */
+}
+
+.headerLogo {
+  max-width: 120px;
+  height: auto;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* Center vertically if space allows */
+  padding: 1rem 2rem 3rem;
+  gap: 2rem;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  /* Blue */
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.gamesContainer {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  /* Allow wrapping */
+}
+
+.gameCard {
+  background-color: var(--card-background);
+  border-radius: 20px;
+  padding: 2.5rem;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 8px 24px rgba(91, 155, 213, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 4px solid transparent;
+  text-align: center;
+}
+
+.gameCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(91, 155, 213, 0.25);
+  border-color: var(--primary-color);
+}
+
+.gamePreview {
+  width: 240px;
+  height: 160px;
+  background-color: var(--secondary-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.previewCards {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.previewCard {
+  width: 50px;
+  height: 70px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.previewCard.flipped {
+  background-color: white;
+  border: 2px solid var(--primary-color);
+}
+
+.previewCard img {
+  width: 35px;
+  height: 35px;
+}
+
+/* Recognition Setup */
+.recognitionPreview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recognitionImage {
+  width: 60px;
+  height: 60px;
+}
+
+.tagsContainer {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tag {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  background-color: var(--secondary-color);
+  /* Use secondary background for inactive tags */
+  font-size: 0.75rem;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+
+.tagActive {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  opacity: 1;
+}
+
+.questionMark {
+  color: white;
+  font-size: 20px;
+}
+
+.gameTitle {
+  font-size: 1.75rem;
+  color: var(--text-color);
+  font-weight: 800;
+  margin: 0;
+}
+
+.gameDescription {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  /* Was #5D6D7E, using text-color for high contrast support later */
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .logo {
+    max-width: 100px;
+  }
+
+  .gamesContainer {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .gameCard {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,171 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: var(--font-family);
+  overflow: hidden;
+}
+
+.centerColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
+
+.logoContainer {
+  margin-bottom: 2rem;
+}
+
+.logo {
+  max-width: 250px;
+  height: auto;
+}
+
+.welcomeText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.playButton {
+  /* Using Button component styles, customizing specific layout if needed */
+  min-width: 280px;
+}
+
+.exitButton {
+  /* Using Button component styles */
+  min-width: 150px;
+}
+
+/* Side Icons */
+.collectionsIcon {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.settingsIcon {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+}
+
+.iconImage {
+  width: 60px;
+  height: 60px;
+  transition: transform var(--transition-speed) var(--transition-ease);
+}
+
+.collectionsIcon:hover .iconImage,
+.settingsIcon:hover .iconImage {
+  transform: scale(1.1);
+}
+
+.iconLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* Modal */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modalContent {
+  background: rgba(255, 255, 255, 0.95);
+  /* Slightly more opaque for better contrast */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 3rem;
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.modalContent h2 {
+  font-size: 1.8rem;
+  color: var(--text-color);
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.modalButtons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .collectionsIcon {
+    position: static;
+    transform: none;
+    /* Reset transform */
+  }
+
+  .settingsIcon {
+    position: static;
+  }
+
+  .container {
+    flex-direction: column;
+    justify-content: start;
+    padding-top: 2rem;
+    gap: 2rem;
+  }
+
+  /* Just a quick stack for mobile */
+  .collectionsIcon,
+  .settingsIcon {
+    flex-direction: row;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    top: auto;
+  }
+}

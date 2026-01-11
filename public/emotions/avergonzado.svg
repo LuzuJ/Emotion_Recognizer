@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Cara avergonzada -->
+  <circle cx="50" cy="50" r="45" fill="#FFB6C1" stroke="#FF69B4" stroke-width="2"/>
+  <!-- Ojos mirando hacia abajo -->
+  <circle cx="35" cy="45" r="5" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="2"/>
+  <circle cx="35" cy="47" r="2.5" fill="#4A4A4A"/>
+  <circle cx="65" cy="45" r="5" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="2"/>
+  <circle cx="65" cy="47" r="2.5" fill="#4A4A4A"/>
+  <!-- Sonrisa nerviosa pequeña -->
+  <path d="M 38 60 Q 50 65 62 60" fill="none" stroke="#4A4A4A" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Mejillas muy sonrojadas -->
+  <circle cx="22" cy="55" r="8" fill="#FF1493" opacity="0.5"/>
+  <circle cx="78" cy="55" r="8" fill="#FF1493" opacity="0.5"/>
+  <!-- Líneas de sudor -->
+  <path d="M 75 30 Q 77 35 75 40" fill="none" stroke="#4A90E2" stroke-width="2" stroke-linecap="round"/>
+</svg>

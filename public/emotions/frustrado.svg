@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Cara frustrada -->
+  <circle cx="50" cy="50" r="45" fill="#FF8C42" stroke="#FF6B35" stroke-width="2"/>
+  <!-- Cejas frustradas -->
+  <line x1="25" y1="33" x2="42" y2="37" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round"/>
+  <line x1="58" y1="37" x2="75" y2="33" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round"/>
+  <!-- Ojos cerrados con fuerza -->
+  <path d="M 28 42 L 42 42" stroke="#4A4A4A" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M 58 42 L 72 42" stroke="#4A4A4A" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Boca apretada frustrada -->
+  <path d="M 35 62 L 50 58 L 65 62" fill="none" stroke="#4A4A4A" stroke-width="3" stroke-linecap="round"/>
+</svg>

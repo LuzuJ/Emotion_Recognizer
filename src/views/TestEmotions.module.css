@@ -1,0 +1,60 @@
+.test-container {
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: var(--color-background);
+}
+
+.test-title {
+  text-align: center;
+  color: var(--color-text-primary);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.emotions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.emotion-card {
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius-medium);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+  transition: transform 0.3s ease;
+}
+
+.emotion-card:hover {
+  transform: translateY(-5px);
+}
+
+.emotion-image {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 1rem;
+}
+
+.emotion-name {
+  color: var(--color-text-primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.emotion-difficulty {
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.difficulty-section {
+  margin-bottom: 3rem;
+}
+
+.difficulty-title {
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,252 @@
+.container {
+  min-height: 100vh;
+  background-color: #EAF4F9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.card {
+  background-color: transparent;
+  padding: 1rem;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  color: #2C3E50;
+  margin-bottom: 2rem;
+  font-weight: 800;
+}
+
+.rewardsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.starsContainer {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.challengeText {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #4A8B9F;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: -1rem;
+  /* Closer to stars */
+}
+
+.bigStar {
+  font-size: 4rem;
+  color: #CBD5E1;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: block;
+}
+
+.bigStar.filled {
+  color: #F59E0B;
+  transform: scale(1.1);
+  animation: popIn 0.5s forwards;
+}
+
+.bigStar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.bigStar:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.badgeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 1s ease-out 0.8s backwards;
+}
+
+.earnedBadgeImage {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(245, 158, 11, 0.4));
+  animation: float 3s ease-in-out infinite;
+}
+
+.badgeName {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #4A8B9F;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.navigationButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* Align items vertically center */
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 2rem;
+  gap: 3rem;
+  /* Adjusted gap for better spacing */
+}
+
+.secondaryActions {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+}
+
+.iconButton {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.iconButton:hover {
+  transform: scale(1.1);
+}
+
+.iconLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #4A8B9F;
+}
+
+.navButtonAction {
+  background-color: #4A8B9F;
+  /* Teal */
+  color: white;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  /* Pill shape */
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Varela Round', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navButtonAction:hover {
+  background-color: #3B7E9F;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(74, 139, 159, 0.3);
+}
+
+.buttonIcon {
+  font-size: 1.5rem;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .navigationButtons {
+    flex-direction: column;
+  }
+
+  .navButtonPrimary,
+  .navButtonSecondary,
+  .navButtonAction {
+    width: 100%;
+    justify-content: center;
+  }
+}

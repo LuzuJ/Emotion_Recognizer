@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Cara sorprendida -->
+  <circle cx="50" cy="50" r="45" fill="#FFBE76" stroke="#F39C12" stroke-width="2"/>
+  <!-- Cejas levantadas -->
+  <line x1="25" y1="30" x2="40" y2="28" stroke="#4A4A4A" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="60" y1="28" x2="75" y2="30" stroke="#4A4A4A" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Ojos grandes -->
+  <circle cx="35" cy="40" r="6" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="2"/>
+  <circle cx="35" cy="40" r="3" fill="#4A4A4A"/>
+  <circle cx="65" cy="40" r="6" fill="#FFFFFF" stroke="#4A4A4A" stroke-width="2"/>
+  <circle cx="65" cy="40" r="3" fill="#4A4A4A"/>
+  <!-- Boca sorprendida (O) -->
+  <ellipse cx="50" cy="65" rx="8" ry="12" fill="none" stroke="#4A4A4A" stroke-width="2.5"/>
+</svg>

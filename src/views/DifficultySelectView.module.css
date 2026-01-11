@@ -1,0 +1,222 @@
+.container {
+  min-height: 100vh;
+  background-color: #EAF4F9;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  font-family: 'Varela Round', sans-serif;
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.navButton {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: #4A8B9F;
+  /* Teal/Blueish */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1.5rem;
+}
+
+.titleBox {
+  background-color: #DDE8F0;
+  padding: 1rem 4rem;
+  border-radius: 20px;
+}
+
+.pageTitle {
+  margin: 0;
+  font-size: 3rem;
+  color: #000;
+  font-weight: 700;
+}
+
+.contentGrid {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  flex: 1;
+  align-items: center;
+}
+
+/* Left Preview */
+.previewColumn {
+  width: 350px;
+  height: 400px;
+  background-color: #8FBAC8;
+  /* Muted Cyan/Blue */
+  border-radius: 4px;
+  /* Slightly sharp corners based on image */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.previewHeader {
+  background-color: #7AA9B9;
+  padding: 1rem;
+  text-align: center;
+  font-weight: 800;
+  color: #1A3C45;
+  font-size: 1.25rem;
+}
+
+.previewBody {
+  flex: 1;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emparejarGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.cardExample {
+  width: 60px;
+  height: 80px;
+  background-color: #E0E0E0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid #999;
+}
+
+.cardExample img {
+  width: 40px;
+  height: 40px;
+}
+
+.reconocerPreview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tagsRow {
+  display: flex;
+  gap: 10px;
+}
+
+.tag {
+  background: #ccc;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.tag.active {
+  background: #4A90E2;
+  color: white;
+}
+
+
+/* Right Buttons */
+.buttonsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 300px;
+}
+
+.diffButton {
+  padding: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  /* Sharp-ish corners */
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+.diffButton:hover {
+  transform: scale(1.05);
+}
+
+.easy {
+  background-color: #B8E2C8;
+  /* Light Green */
+}
+
+.medium {
+  background-color: #AEC6CF;
+  /* Light Blue */
+}
+
+.hard {
+  background-color: #4A8B9F;
+  /* Teal */
+  color: white;
+  /* Contrast */
+}
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4rem;
+  margin-top: 2rem;
+}
+
+.iconButton {
+  background: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.iconButton:hover {
+  transform: scale(1.1);
+}
+
+.iconImage {
+  width: 60px;
+  height: 60px;
+}
+
+.iconLabel {
+  font-size: 1rem;
+  font-weight: 700;
+  color: black;
+}
+
+.iconCircle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.iconSymbol {
+  font-size: 2rem;
+  color: #4A8B9F;
+  font-weight: 800;
+}
