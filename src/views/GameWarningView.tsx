@@ -18,7 +18,7 @@ const GameWarningView: React.FC = () => {
   const currentDifficulty = difficultyInfo[difficulty as keyof typeof difficultyInfo] || difficultyInfo.facil;
 
   useEffect(() => {
-    document.title = `¡Listo para jugar! - Emozion`;
+    document.title = `¡Listo para jugar! - Emotion Recognizer`;
   }, []);
 
   const handleStartGame = () => {
@@ -30,9 +30,9 @@ const GameWarningView: React.FC = () => {
   };
 
   return (
-    <div 
-      className={styles['warning-container']} 
-      role="main" 
+    <div
+      className={styles['warning-container']}
+      role="main"
       aria-label="Información antes de comenzar el juego"
     >
       <div className={styles['warning-content']}>
@@ -43,7 +43,7 @@ const GameWarningView: React.FC = () => {
         <h1 className={styles.title}>¡Listo para jugar!</h1>
 
         <p className={styles.description}>
-          {isEmparejar 
+          {isEmparejar
             ? 'Vas a buscar parejas de emociones. Voltea las cartas y encuentra las que son iguales.'
             : 'Vas a ver diferentes emociones. Selecciona el nombre correcto para cada una.'}
         </p>

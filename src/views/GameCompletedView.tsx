@@ -11,6 +11,7 @@ interface GameStats {
   maxStreak?: number;
   matchedPairs?: number;
   totalPairs?: number;
+  attempts?: number;
   timeSpent: number;
 }
 
@@ -23,9 +24,11 @@ function GameCompletedView() {
   const [earnedBadges, setEarnedBadges] = useState<Badge[]>([]);
   const stats = (location.state as GameStats) || {};
 
+  console.log('GameCompleted Stats:', stats);
+
   useEffect(() => {
     const gameName = gameType === 'emparejar' ? 'Emparejar' : 'Reconocer';
-    document.title = `¡Excelente trabajo! - ${gameName} - Emozion`;
+    document.title = `¡Excelente trabajo! - ${gameName} - Emotion Recognizer`;
 
     // Calcular badges (lógica existente mantenida por funcionalidad, aunque visualmente cambiemos)
     if (gameType && difficulty) {
@@ -50,10 +53,30 @@ function GameCompletedView() {
 
   const handleHome = () => navigate('/menu');
   const handleRetry = () => navigate(`/advertencia/${gameType}/${difficulty}`);
-  const handleNext = () => navigate('/coleccionables'); // O siguiente nivel si hubiera lógica
+  const handleNext = () => navigate('/jugar');
 
-  // Estrellas basadas en puntaje/aciertos (Simulación: 3 estrellas si completó)
-  const starCount = 3;
+  // Calcular estrellas basado en el desempeño
+  let starCount = 0;
+
+  if (gameType === 'reconocer') {
+    // Si no hay score, asumimos 0. Si no hay totalRounds, asumimos 1 para evitar division por 0.
+    const { score = 0, totalRounds = 1 } = stats;
+    const percentage = score / totalRounds;
+    console.log(`Reconocer Stars: Score ${score}/${totalRounds} = ${percentage}`);
+
+    if (percentage === 1) starCount = 3;
+    else if (percentage >= 0.6) starCount = 2;
+    else starCount = 1;
+  } else if (gameType === 'emparejar') {
+    // IMPORTANTE: attempts default 999 para que NO sea "perfecto" si falta el dato.
+    const { attempts = 999, totalPairs = 1 } = stats;
+    console.log(`Emparejar Stars: Attempts ${attempts}, Pairs ${totalPairs}`);
+
+    if (attempts <= totalPairs + 2) starCount = 3;
+    else if (attempts <= totalPairs * 1.5) starCount = 2;
+    else starCount = 1;
+  }
+
   const displayBadge = earnedBadges.length > 0 ? earnedBadges[0] : null;
 
   return (
@@ -78,7 +101,7 @@ function GameCompletedView() {
           {/* Badge */}
           {displayBadge && (
             <div className={styles.badgeContainer}>
-              <img src={displayBadge.image} alt={displayBadge.name} className={styles.earnedBadgeImage} />
+              <img src={displayBadge.imageUrl} alt={displayBadge.name} className={styles.earnedBadgeImage} />
               <div className={styles.badgeName}>{displayBadge.name}</div>
             </div>
           )}

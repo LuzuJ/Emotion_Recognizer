@@ -1,11 +1,11 @@
 .container {
   min-height: 100vh;
-  background-color: #EAF4F9;
+  background-color: var(--background-color);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  font-family: 'Varela Round', sans-serif;
+  font-family: var(--font-family);
 }
 
 .card {
@@ -17,11 +17,12 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
 }
 
 .title {
   font-size: 3rem;
-  color: #2C3E50;
+  color: var(--text-color);
   margin-bottom: 2rem;
   font-weight: 800;
 }
@@ -56,27 +57,39 @@
   color: #CBD5E1;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   display: block;
+  filter: grayscale(100%);
+  opacity: 0.3;
 }
 
 .bigStar.filled {
-  color: #F59E0B;
+  color: var(--accent-color);
   transform: scale(1.1);
-  animation: popIn 0.5s forwards;
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.bigStar.filled {
+  color: var(--accent-color);
+}
+
+.bigStar:nth-child(1) {
+  animation-delay: 0.4s;
 }
 
 .bigStar:nth-child(2) {
-  animation-delay: 0.2s;
+  animation-delay: 0.6s;
 }
 
 .bigStar:nth-child(3) {
-  animation-delay: 0.4s;
+  animation-delay: 0.8s;
 }
 
 .badgeContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: fadeIn 1s ease-out 0.8s backwards;
+  animation: fadeIn 1s ease-out 1.2s backwards;
 }
 
 .earnedBadgeImage {
@@ -174,11 +187,11 @@
 .iconLabel {
   font-size: 1rem;
   font-weight: 700;
-  color: #4A8B9F;
+  color: var(--primary-color);
 }
 
 .navButtonAction {
-  background-color: #4A8B9F;
+  background-color: var(--primary-color);
   /* Teal */
   color: white;
   padding: 1rem 3rem;

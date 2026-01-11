@@ -194,7 +194,7 @@ function TutorialView() {
         </div>
 
         <div className={styles.logoContainer}>
-          <img src="/logo-emozion.png" alt="Emotion Recognizer Logo" className={styles.gameLogo} />
+          <img src="/logo-emotion.png" alt="Emotion Recognizer Logo" className={styles.gameLogo} />
           <span className={styles.logoText}>EMOTION RECOGNIZER</span>
         </div>
       </header>

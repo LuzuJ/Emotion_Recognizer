@@ -52,7 +52,7 @@ function RecognitionGameView() {
     }
 
     setRounds(gameRounds);
-    document.title = `Reconocer - ${difficulty} - Emozion`;
+    document.title = `Reconocer - ${difficulty} - Emotion Recognizer`;
   }, [difficulty]);
 
   // Verificar si el juego terminó
@@ -110,7 +110,7 @@ function RecognitionGameView() {
   };
 
   const handleConfirmExit = () => {
-    navigate('/menu');
+    navigate('/jugar');
   };
 
   const handleCancelExit = () => {

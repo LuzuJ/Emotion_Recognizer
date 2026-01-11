@@ -1,11 +1,11 @@
 .container {
   min-height: 100vh;
-  background-color: #EAF4F9;
+  background-color: var(--background-color);
   /* Light Blue */
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  font-family: 'Varela Round', sans-serif;
+  font-family: var(--font-family);
 }
 
 .header {
@@ -22,7 +22,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #4A8B9F;
+  background-color: var(--primary-color);
   /* Teal */
   border: none;
   display: flex;
@@ -50,7 +50,7 @@
 }
 
 .infoBadge {
-  background-color: white;
+  background-color: var(--card-background);
   padding: 0.5rem 1.5rem;
   border-radius: 20px;
   display: flex;
@@ -71,7 +71,7 @@
 .infoValue {
   font-size: 1.4rem;
   font-weight: 800;
-  color: #4A8B9F;
+  color: var(--primary-color);
 }
 
 .gameBoard {
@@ -148,8 +148,8 @@
 
 /* Card Back Design */
 .cardBack {
-  background-color: #A5D6E0;
-  /* Pastel Blue */
+  background-color: var(--primary-color);
+  /* Pastel Blue - mapped to primary for standardization */
   border: 4px solid white;
   /* Optional: white border for bevel effect */
   box-shadow: inset 0 0 0 1px #8FBCC6;
@@ -170,9 +170,9 @@
 
 /* Card Front Design */
 .cardFront {
-  background: white;
+  background: var(--card-background);
   transform: rotateY(180deg);
-  border: 2px solid #A5D6E0;
+  border: 2px solid var(--primary-color);
 }
 
 .emotionImage {
@@ -184,17 +184,17 @@
 
 .cardFrontLabel {
   font-size: 1.1rem;
-  color: #2C3E50;
+  color: var(--text-color);
   font-weight: 700;
   text-transform: capitalize;
 }
 
 /* Matched State */
 .card.matched .cardFront {
-  border-color: #8BC34A;
+  border-color: var(--success-color);
   /* Green border for match */
-  background-color: #E8F5E9;
-  box-shadow: 0 0 15px rgba(139, 195, 74, 0.4);
+  background-color: var(--card-background);
+  box-shadow: 0 0 15px var(--success-color);
 }
 
 /* Modal Styles */
@@ -211,7 +211,7 @@
 }
 
 .modal {
-  background: rgba(255, 255, 255, 0.35);
+  background: var(--card-background);
   /* Transparent/Glass */
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -225,14 +225,14 @@
 
 .modalTitle {
   font-size: 1.75rem;
-  color: #2C3E50;
+  color: var(--text-color);
   margin-bottom: 1rem;
   font-weight: 800;
 }
 
 .modalText {
   font-size: 1.1rem;
-  color: #34495E;
+  color: var(--text-color);
   margin-bottom: 2rem;
   line-height: 1.6;
 }

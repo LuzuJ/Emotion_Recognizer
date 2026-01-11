@@ -73,3 +73,47 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: #95A5A6;
 }
+
+/* --- MODO OSCURO --- */
+html[data-theme='dark'] {
+    --primary-color: #63B3ED;
+    --primary-hover: #4299E1;
+    --secondary-color: #2D3748;
+    --background-color: #1A202C;
+    --card-background: #2D3748;
+    --text-color: #F7FAFC;
+    --text-light: #E2E8F0;
+    --accent-color: #F6E05E;
+}
+
+/* Permitir transición suave de colores */
+html,
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- MODOS DE DALTONISMO --- */
+
+/* Protanopia y Deuteranopia */
+html[data-color-blind='protanopia'],
+html[data-color-blind='deuteranopia'] {
+    --success-color: #3182CE;
+    --error-color: #D69E2E;
+}
+
+html[data-theme='dark'][data-color-blind='protanopia'],
+html[data-theme='dark'][data-color-blind='deuteranopia'] {
+    --error-color: #F6E05E;
+}
+
+/* Tritanopia */
+html[data-color-blind='tritanopia'] {
+    --primary-color: #008080;
+    --primary-hover: #006666;
+    --accent-color: #D53F8C;
+}
+
+html[data-theme='dark'][data-color-blind='tritanopia'] {
+    --primary-color: #4FD1C5;
+    --primary-hover: #38B2AC;
+}

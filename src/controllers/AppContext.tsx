@@ -14,6 +14,7 @@ interface AppContextType {
 
 const defaultSettings: UserSettings = {
   theme: 'light',
+  colorBlindMode: 'none',
   soundEnabled: true,
   screenReaderEnabled: false,
   animationsEnabled: true
@@ -37,9 +38,11 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   // Guardar configuración en localStorage cuando cambie
   useEffect(() => {
     localStorage.setItem('emotionRecognizerSettings', JSON.stringify(settings));
-    
+
     // Aplicar tema
     document.documentElement.setAttribute('data-theme', settings.theme);
+    // Aplicar modo daltonismo
+    document.documentElement.setAttribute('data-color-blind', settings.colorBlindMode);
   }, [settings]);
 
   // Guardar insignias en localStorage cuando cambien

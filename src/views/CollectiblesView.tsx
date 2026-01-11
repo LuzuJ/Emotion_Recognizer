@@ -9,7 +9,7 @@ function CollectiblesView() {
   const { collectedBadges } = useApp();
 
   useEffect(() => {
-    document.title = 'Coleccionables - Emozion';
+    document.title = 'Coleccionables - Emotion Recognizer';
   }, []);
 
   const handleBack = () => {

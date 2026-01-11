@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useApp } from '../controllers/AppContext';
 import styles from './ConfigView.module.css';
 
@@ -23,8 +23,14 @@ const ConfigView: React.FC = () => {
     updateSettings({ animationsEnabled: !settings.animationsEnabled });
   };
 
+  const location = useLocation();
+  console.log('ConfigView Location State:', location.state);
   const handleBack = () => {
-    navigate('/menu');
+    if (location.state?.from) {
+      navigate(location.state.from);
+    } else {
+      navigate(-1);
+    }
   };
 
   return (
@@ -82,6 +88,40 @@ const ConfigView: React.FC = () => {
               />
               <span className={styles['toggle-slider']}></span>
             </label>
+          </div>
+
+          <div className={styles['config-option-col']}>
+            <span className={styles['option-label']}>
+              👁️ Modo Daltonismo
+            </span>
+            <select
+              className={styles['select-input']}
+              value={settings.colorBlindMode}
+              onChange={(e) => updateSettings({ colorBlindMode: e.target.value as any })}
+              aria-label="Seleccionar modo de daltonismo"
+            >
+              <option value="none">Ninguno</option>
+              <option value="protanopia">Protanopia (Rojo)</option>
+              <option value="deuteranopia">Deuteranopia (Verde)</option>
+              <option value="tritanopia">Tritanopia (Azul)</option>
+            </select>
+            <div className={styles['color-preview-container']}>
+              <p className={styles['preview-title']}>Vista Previa de Colores:</p>
+              <div className={styles['preview-grid']}>
+                <div className={`${styles['preview-box']} ${styles['preview-success']}`}>
+                  <span>Correcto</span>
+                </div>
+                <div className={`${styles['preview-box']} ${styles['preview-error']}`}>
+                  <span>Error</span>
+                </div>
+                <div className={`${styles['preview-box']} ${styles['preview-primary']}`}>
+                  <span>Primario</span>
+                </div>
+                <div className={`${styles['preview-box']} ${styles['preview-accent']}`}>
+                  <span>Acento</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

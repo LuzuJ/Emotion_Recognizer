@@ -165,9 +165,9 @@ export const calculateBadges = (performance: GamePerformance): Badge[] => {
 
 // Verificar si se desbloquea una insignia de maestría
 export const getNewBadge = (
-  gameType: string,
-  difficulty: string,
-  collectedBadges: Badge[]
+  _gameType: string,
+  _difficulty: string,
+  _collectedBadges: Badge[]
 ): Badge | null => {
   // Por ahora retornamos null, pero se puede expandir para verificar
   // si el usuario completó todos los niveles de un juego

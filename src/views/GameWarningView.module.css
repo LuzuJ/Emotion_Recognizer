@@ -9,7 +9,7 @@
 }
 
 .warning-content {
-  background-color: white;
+  background-color: var(--card-background);
   padding: 3rem;
   border-radius: var(--border-radius-lg);
   box-shadow: 0 8px 30px rgba(91, 155, 213, 0.2);

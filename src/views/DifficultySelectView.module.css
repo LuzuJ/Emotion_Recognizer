@@ -1,10 +1,10 @@
 .container {
   min-height: 100vh;
-  background-color: #EAF4F9;
+  background-color: var(--background-color);
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  font-family: 'Varela Round', sans-serif;
+  font-family: var(--font-family);
   position: relative;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .titleBox {
-  background-color: #DDE8F0;
+  background-color: var(--secondary-color);
   padding: 1rem 4rem;
   border-radius: 20px;
 }
@@ -40,7 +40,7 @@
 .pageTitle {
   margin: 0;
   font-size: 3rem;
-  color: #000;
+  color: var(--text-color);
   font-weight: 700;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .previewHeader {
-  background-color: #7AA9B9;
+  background-color: var(--primary-hover);
   padding: 1rem;
   text-align: center;
   font-weight: 800;
@@ -202,7 +202,7 @@
 .iconLabel {
   font-size: 1rem;
   font-weight: 700;
-  color: black;
+  color: var(--text-color);
 }
 
 .iconCircle {

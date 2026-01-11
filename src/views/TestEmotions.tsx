@@ -31,9 +31,9 @@ const TestEmotions: React.FC = () => {
   return (
     <div className={styles['test-container']}>
       <h1 className={styles['test-title']}>
-        15 Emociones - Reconocedor Emozion
+        15 Emociones - Reconocedor Emotion Recognizer
       </h1>
-      
+
       {renderEmotions(facilEmotions, '🟢 Nivel Fácil (5 emociones básicas)')}
       {renderEmotions(medioEmotions, '🟡 Nivel Medio (10 emociones total)')}
       {renderEmotions(dificilEmotions, '🔴 Nivel Difícil (15 emociones total)')}

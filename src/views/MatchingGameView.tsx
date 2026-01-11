@@ -56,7 +56,7 @@ function MatchingGameView() {
     }
 
     setCards(cardPairs);
-    document.title = `Emparejar - ${difficulty} - Emozion`;
+    document.title = `Emparejar - ${difficulty} - Emotion Recognizer`;
   }, [difficulty]);
 
   // Verificar si el juego terminó
@@ -153,7 +153,7 @@ function MatchingGameView() {
   };
 
   const handleConfirmExit = () => {
-    navigate('/menu');
+    navigate('/jugar');
   };
 
   const handleCancelExit = () => {

@@ -36,8 +36,11 @@ export interface Badge {
   earnedDate?: Date;
 }
 
+export type ColorBlindMode = 'none' | 'protanopia' | 'deuteranopia' | 'tritanopia';
+
 export interface UserSettings {
   theme: ThemeMode;
+  colorBlindMode: ColorBlindMode;
   soundEnabled: boolean;
   screenReaderEnabled: boolean;
   animationsEnabled: boolean;

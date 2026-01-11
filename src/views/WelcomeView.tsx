@@ -24,7 +24,7 @@ const WelcomeView: React.FC = () => {
       <div className={styles['welcome-content']}>
         <div className={styles['logo-container']}>
           <img
-            src="/logo-emozion.png"
+            src="/logo-emotion.png"
             alt="Emotion Recognizer - Logo del proyecto"
             className={styles.logo}
           />

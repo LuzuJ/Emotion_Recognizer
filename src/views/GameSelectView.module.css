@@ -18,26 +18,39 @@
 }
 
 .backButton {
+  background: white;
+  border: none;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: var(--primary-color);
-  /* Teal from Main Menu Exit - used primary here for consistency or check if teal var exists */
-  /* Actually MainMenu used #4A8B9F which is not exactly primary #5B9BD5. 
-     Let's use --primary-hover or similar if teal isn't defined, or define a new var?
-     The plan said "Standardize". Let's use --primary-color. */
-  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: white;
-  /* For the icon fill */
+  color: #4A8B9F;
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 10;
 }
 
-.backButton:hover {
+.settingsButton {
+  background: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #4A8B9F;
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 10;
+}
+
+.backButton:hover,
+.settingsButton:hover {
   transform: scale(1.1);
   background-color: var(--primary-hover);
 }
@@ -137,7 +150,7 @@
 }
 
 .previewCard.flipped {
-  background-color: white;
+  background-color: var(--card-background);
   border: 2px solid var(--primary-color);
 }
 

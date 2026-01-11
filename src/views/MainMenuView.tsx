@@ -13,7 +13,7 @@ const MainMenuView: React.FC = () => {
 
   const handlePlay = () => navigate('/jugar');
   const handleCollections = () => navigate('/coleccionables');
-  const handleSettings = () => navigate('/configuracion');
+  const handleSettings = () => navigate('/configuracion', { state: { from: '/menu' } });
   const handleExit = () => setShowExitModal(true);
   const confirmExit = () => navigate('/salir');
   const cancelExit = () => setShowExitModal(false);
@@ -25,7 +25,7 @@ const MainMenuView: React.FC = () => {
       <div className={styles.centerColumn}>
         <div className={styles.logoContainer}>
           <img
-            src="/logo-emozion.png"
+            src="/logo-emotion.png"
             alt="Emotion Recognizer Logo"
             className={styles.logo}
           />

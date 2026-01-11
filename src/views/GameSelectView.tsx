@@ -48,7 +48,15 @@ const GameSelectView: React.FC = () => {
           </svg>
         </button>
 
-        <img src="/logo-emozion.png" alt="Emotion Recognizer Logo" className={styles.headerLogo} />
+        <img src="/logo-emotion.png" alt="Emotion Recognizer Logo" className={styles.headerLogo} />
+
+        <button
+          className={styles.settingsButton}
+          onClick={() => navigate('/configuracion', { state: { from: '/jugar' } })}
+          aria-label="Configuración"
+        >
+          <img src="/icons/configuracion.svg" alt="" style={{ width: '24px', height: '24px' }} />
+        </button>
       </header>
 
       <div className={styles.content}>
